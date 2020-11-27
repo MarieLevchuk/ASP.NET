@@ -26,7 +26,7 @@ namespace MyLibraryTest
         }
 
         [TestMethod]
-        public void CountPositive_6789_2Returned()
+        public void CountEvenNumber_6789_2Returned()
         {
             //arrange
 
@@ -35,7 +35,7 @@ namespace MyLibraryTest
 
             //act
 
-            int actual = ArrayManager.CountPositive(arr);
+            int actual = ArrayManager.CountEvenNumber(arr);
 
             //assert
 

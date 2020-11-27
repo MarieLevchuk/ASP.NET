@@ -15,7 +15,7 @@ namespace MyLibrary
             return max;
         }
 
-        public static int CountPositive(int[] arr)
+        public static int CountEvenNumber(int[] arr)
         {
             int count = 0;
             foreach (int a in arr)
