@@ -14,5 +14,16 @@ namespace MyLibrary
             }
             return max;
         }
+
+        public static int CountPositive(int[] arr)
+        {
+            int count = 0;
+            foreach (int a in arr)
+            {
+                if (a % 2 == 0)
+                    count++;
+            }
+            return count;
+        }
     }
 }

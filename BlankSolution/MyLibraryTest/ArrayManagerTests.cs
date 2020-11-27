@@ -2,6 +2,7 @@
 using MyLibrary;
 using System;
 
+
 namespace MyLibraryTest
 {
     [TestClass]
@@ -18,6 +19,23 @@ namespace MyLibraryTest
             //act
 
             int actual = ArrayManager.FindMax(arr);
+
+            //assert
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CountPositive_6789_2Returned()
+        {
+            //arrange
+
+            int[] arr = { 6, 7, 8, 9 };
+            int expected = 2;
+
+            //act
+
+            int actual = ArrayManager.CountPositive(arr);
 
             //assert
 
