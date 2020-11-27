@@ -29,16 +29,13 @@ namespace MyLibraryTest
         public void CountEvenNumber_6789_2Returned()
         {
             //arrange
-
             int[] arr = { 6, 7, 8, 9 };
             int expected = 2;
 
             //act
-
             int actual = ArrayManager.CountEvenNumber(arr);
 
             //assert
-
             Assert.AreEqual(expected, actual);
         }
     }
