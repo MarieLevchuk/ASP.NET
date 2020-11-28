@@ -27,5 +27,15 @@ namespace MyLibrary
             }
             return count;
         }
+
+        public static double GetAverage(int[] arr)
+        {
+            double sum = 0;
+            foreach (var a in arr)
+            {
+                sum += a;
+            }
+            return sum / arr.Length;
+        }
     }
 }

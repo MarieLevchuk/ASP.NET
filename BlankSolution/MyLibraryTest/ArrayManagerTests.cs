@@ -12,16 +12,13 @@ namespace MyLibraryTest
         public void FindMax_2345_5Returned()
         {
             //arrange
-
             int[] arr = { 2, 3, 4, 5 };
             int expected = 5;
 
             //act
-
             int actual = ArrayManager.FindMax(arr);
 
             //assert
-
             Assert.AreEqual(expected, actual);
         }
 
@@ -48,6 +45,22 @@ namespace MyLibraryTest
             
             //act
             int actual = ArrayManager.CountEvenNumber(arr);
+        }
+
+        [TestMethod]
+        public void GetAverage_235_ExpectedAverage()
+        {
+            //arrange
+
+            int[] arr = { 2, 3, 5 };
+            double expected = 3.33;
+
+            //act
+
+            double actual = ArrayManager.GetAverage(arr);
+
+            //assert
+            Assert.AreEqual(expected, actual, 0.01);
         }
     }
 }
