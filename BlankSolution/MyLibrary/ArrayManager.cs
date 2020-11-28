@@ -17,6 +17,8 @@ namespace MyLibrary
 
         public static int CountEvenNumber(int[] arr)
         {
+            if (arr == null)
+                throw new NullReferenceException("array is not initialized");
             int count = 0;
             foreach (int a in arr)
             {

@@ -38,5 +38,16 @@ namespace MyLibraryTest
             //assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(NullReferenceException))]
+        public void CountEvenNumber_NullArray_ExpectedExeption()
+        {
+            //arrange
+            int[] arr = null;
+            
+            //act
+            int actual = ArrayManager.CountEvenNumber(arr);
+        }
     }
 }
