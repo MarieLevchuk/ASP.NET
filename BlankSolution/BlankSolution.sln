@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{83D43E77-D85D-423F-8B43-2424C4A5C352}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photographer", "Photographer\Photographer.csproj", "{6548663C-0087-41DF-BF48-D79E8A4C5F4A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
