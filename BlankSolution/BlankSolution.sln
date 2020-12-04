@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photographer", "Photographer\Photographer.csproj", "{6548663C-0087-41DF-BF48-D79E8A4C5F4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication_IoC", "WebApplication_IoC\WebApplication_IoC.csproj", "{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6548663C-0087-41DF-BF48-D79E8A4C5F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
