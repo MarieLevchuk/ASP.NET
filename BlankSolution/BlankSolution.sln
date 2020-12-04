@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogging", "Blogging\Bloggi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{4D3EA6D7-8907-41C5-ABBA-3FCC0DC638C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{83D43E77-D85D-423F-8B43-2424C4A5C352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4D3EA6D7-8907-41C5-ABBA-3FCC0DC638C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D3EA6D7-8907-41C5-ABBA-3FCC0DC638C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D3EA6D7-8907-41C5-ABBA-3FCC0DC638C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D43E77-D85D-423F-8B43-2424C4A5C352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
