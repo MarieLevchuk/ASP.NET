@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sensors", "Sensors\Sensors.csproj", "{C5A66C77-B250-423A-B23A-FFAB93A54147}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogging", "Blogging\Blogging.csproj", "{35921FA6-7F20-4445-B83C-F69AC2315D73}"
@@ -14,6 +15,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Photographer", "Photographer\Photographer.csproj", "{6548663C-0087-41DF-BF48-D79E8A4C5F4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication_IoC", "WebApplication_IoC\WebApplication_IoC.csproj", "{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}"
+
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibrary", "MyLibrary\MyLibrary.csproj", "{D940C77E-7D69-4DB8-B6ED-D20F9E035FA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLibraryTest", "MyLibraryTest\MyLibraryTest.csproj", "{28D91827-2722-4B00-A165-D619C311B5D4}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,7 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+
 		{C5A66C77-B250-423A-B23A-FFAB93A54147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5A66C77-B250-423A-B23A-FFAB93A54147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A66C77-B250-423A-B23A-FFAB93A54147}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +52,16 @@ Global
 		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAF31FB2-0710-4B90-8FDF-59BF4EA4B69E}.Release|Any CPU.Build.0 = Release|Any CPU
+
+		{D940C77E-7D69-4DB8-B6ED-D20F9E035FA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D940C77E-7D69-4DB8-B6ED-D20F9E035FA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D940C77E-7D69-4DB8-B6ED-D20F9E035FA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D940C77E-7D69-4DB8-B6ED-D20F9E035FA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D91827-2722-4B00-A165-D619C311B5D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D91827-2722-4B00-A165-D619C311B5D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D91827-2722-4B00-A165-D619C311B5D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D91827-2722-4B00-A165-D619C311B5D4}.Release|Any CPU.Build.0 = Release|Any CPU
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
