@@ -12,13 +12,19 @@ namespace Converter.Controllers
     public class ConverterController : ControllerBase
     {
         ITemperature _temperature = new Temperature();
+        IValidator validator = new TemperatureValidator();
 
         [HttpGet]
         public IActionResult ConvertTemperture(int temperatureC)
         {
-            _temperature.CelsiusDegree = temperatureC;
-            _temperature.ConvertCelsiusToFarenheit();
-            return Ok(_temperature.FarenheitDegree);
+            if (validator.ValueIsValid(temperatureC))
+            {
+                _temperature.CelsiusDegree = temperatureC;
+                _temperature.ConvertCelsiusToFarenheit();
+                return Ok(_temperature.FarenheitDegree);
+            }
+            else
+                return BadRequest(" ");
         }
     }
 }
