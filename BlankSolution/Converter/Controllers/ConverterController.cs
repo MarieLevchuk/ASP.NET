@@ -5,7 +5,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net.Mime;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Converter.Controllers
@@ -13,12 +16,14 @@ namespace Converter.Controllers
     public class ConverterController : ControllerBase
     {
         ITemperature _temperature = new Temperature();
-        IValidator validator = new TemperatureValidator();
+        IValidator _validator = new TemperatureValidator();
+        string  _filePath = Path.Combine(@"C:\Temp", "temperature.txt");
+        string  _archivePath = Path.Combine(@"C:\Temp", "temperature.zip");
 
         [HttpGet]
         public IActionResult ConvertTemperture(int temperatureC)
         {
-            if (validator.ValueIsValid(temperatureC))
+            if (_validator.ValueIsValid(temperatureC))
             {
                 _temperature.CelsiusDegree = temperatureC;
                 _temperature.ConvertCelsiusToFarenheit();
@@ -28,21 +33,62 @@ namespace Converter.Controllers
                 return LocalRedirect("https://www.it-academy.by");
         }
 
-        [HttpGet]
-        public FileResult SendTxtFile(int temperatureC)
+        [HttpPost]
+        public ActionResult SendTxtFile(int temperatureC)
         {
-            var filePath = @"Files";
-            using (FileStream fstream = new FileStream($"{filePath}/temperatureC.txt", FileMode.OpenOrCreate))
-            {
-                byte[] byteArray = BitConverter.GetBytes(temperatureC);
-                fstream.Write(byteArray, 0, byteArray.Length);                
-            }
-            return File(filePath, "text/plain", "temperatureC.txt");
+            CreateTxtFile(temperatureC);
+                                   
+            byte[] fileBytes = System.IO.File.ReadAllBytes(_filePath);
+            string fileName = "temperature.txt";
+            return File(fileBytes, MediaTypeNames.Text.Plain, fileName);
         }
+
+        [HttpPost]
+        public IActionResult SendZipArchive()
+        {
+            CreateArchive();
+            byte[] bytes = System.IO.File.ReadAllBytes(_archivePath);
+            string fileName = "temperature.zip";
+            return File(bytes, MediaTypeNames.Application.Zip, fileName);
+        }
+
+        public void CreateTxtFile(int temperatureC)
+        {            
+            string writePath = @"c:\Temp\temperature.txt";
+            try
+            {
+                using (StreamWriter sw = new StreamWriter(writePath, false, Encoding.Default))
+                {
+                    sw.WriteLine($"Temperture in celsius is {temperatureC}");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }              
+
+        public void CreateArchive()
+        {
+            try
+            {
+                using (FileStream zipToOpen = new FileStream(_archivePath, FileMode.OpenOrCreate))
+                {
+                    using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update))
+                    {
+                        ZipArchiveEntry readmeEntry = archive.CreateEntryFromFile(_filePath, "temperature.txt");
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }            
+        }              
 
         public IActionResult IsValid()
         {
-            if (validator.ValueIsValid(_temperature.CelsiusDegree))
+            if (_validator.ValueIsValid(_temperature.CelsiusDegree))
             {
                 return Ok();
             }
