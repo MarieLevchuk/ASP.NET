@@ -52,6 +52,14 @@ namespace Converter.Controllers
             return File(bytes, MediaTypeNames.Application.Zip, fileName);
         }
 
+        [HttpPost]
+        public IActionResult SendStreamOfBytes()
+        {
+            FileStream fstream = new FileStream(_filePath, FileMode.Open);
+            string fileName = "temperature.txt";
+            return File(fstream, MediaTypeNames.Text.Plain, fileName);
+        }
+
         public void CreateTxtFile(int temperatureC)
         {            
             string writePath = @"c:\Temp\temperature.txt";
