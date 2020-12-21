@@ -7,9 +7,10 @@ namespace Converter.Models
 {
     public class TemperatureValidator : IValidator
     {
+        int _min = -273;
         public bool ValueIsValid(int temperatureC)
         {
-            return temperatureC >= -273 ? true : false;
+            return temperatureC >= _min ? true : false;
         }
     }
 }

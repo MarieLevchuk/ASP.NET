@@ -30,7 +30,7 @@ namespace Converter.Controllers
                 return Ok();
             }
             else
-                return LocalRedirect("https://www.it-academy.by");
+                return Redirect("https://www.it-academy.by");
         }
 
         [HttpPost]
