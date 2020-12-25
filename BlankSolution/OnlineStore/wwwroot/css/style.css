@@ -88,6 +88,13 @@ li {
     text-align: center;
 }
 
+.content_aboutpage {
+    margin: 0;
+    border: 2px solid #383838;
+    border-style: dotted;
+    height: 300px;
+}
+
 .footer_inner {
     padding: 15px 0;
     border: 2px solid #383838;
