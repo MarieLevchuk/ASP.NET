@@ -19,6 +19,19 @@ namespace OnlineStore.Controllers
         }
 
         [HttpGet]
+        public IActionResult CreateCookie()
+        {
+            return View("Index");
+        }
+
+        [HttpPost]
+        public IActionResult CreateCookie(string txtUserName)
+        {
+            Response.Cookies.Append("name", txtUserName);
+            return View("Index");
+        }
+
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
