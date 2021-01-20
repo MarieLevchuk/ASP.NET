@@ -10,13 +10,8 @@ using System.Threading.Tasks;
 namespace OnlineStore.Controllers
 {
     public class HomeController : Controller
-    {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+    {        
+        CatalogsDAL goodsDAL = new CatalogsDAL();
 
         [HttpGet]
         public IActionResult CreateCookie()
@@ -34,6 +29,7 @@ namespace OnlineStore.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewBag.Catalogs = goodsDAL.GetCatalogs();
             return View();
         }
 

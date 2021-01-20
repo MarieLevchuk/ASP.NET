@@ -5,10 +5,11 @@
         <div class="container">
             <div class="sidebar">
                 <ul>
-                    <li>Mobile phones</li>
-                    <li>Laptops</li>
-                    <li>Cameras</li>
-                    <li>Headphones</li>
+                    @foreach (string catalog in ViewBag.Catalogs)
+                     {
+                        <li><a href="">@catalog</a></li>
+                     }
+                       
                 </ul>
             </div><!--end sidebar-->
 
@@ -19,7 +20,7 @@
                         <input type="text" name="txtUserName" size="30" />
                         <button>Enter</button>
                     </form>
-                </div>
+                </div>                
             </div>
         </div><!--end container-->
    
