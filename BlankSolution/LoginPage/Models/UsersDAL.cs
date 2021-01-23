@@ -11,13 +11,12 @@ namespace LoginPage.Models
     public class UsersDAL
     {
         string _connectionString = "Data Source=HOME-1;Initial Catalog=UsersDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        public List<User> GetUsers()
+        public User GetUserByRegistrationData(string login, string password)
         {
-            List<User> usersList = new List<User>();
             DataContext dataContext = new DataContext(_connectionString);
-            Table<User> users = dataContext.GetTable<User>();
-
-            return usersList;
+            var user = dataContext.GetTable<User>().Where(u => u.Login == login && u.Password==password);
+            
+            return user.FirstOrDefault();
         }
     }
 }

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using LoginPage.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace LoginPage.Services
 {
-    interface IIdentityValidator
+    public interface IIdentityValidator
     {
+        bool UserIsRegistered(User user);
     }
 }
