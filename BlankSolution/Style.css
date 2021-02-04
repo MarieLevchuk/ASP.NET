@@ -1,0 +1,21 @@
+﻿div {
+    text-align: center;
+    background-color: #fff;
+}
+
+button {
+    height: 40px;
+    width: 80px;
+}
+
+    button#first {
+        background-color: darkseagreen;
+    }
+
+    button#second {
+        background-color: lightcoral;
+    }
+
+    button#third {
+        background-color: yellowgreen;
+    }

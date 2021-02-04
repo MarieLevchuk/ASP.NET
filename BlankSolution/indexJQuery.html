@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.color').click(function() {
+                $('body').css('background-color', window.getComputedStyle(this).backgroundColor);
+            });
+            $('.color').mouseover(function() {
+                $('body').css('background-color', window.getComputedStyle(this).backgroundColor);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="page">
+        <h1>please select background color of your page</h1>
+        <div class="inner">
+            <button class="color" id="first">1</button>
+            <button class="color" id="second">2</button>
+            <button class="color" id="third">3</button>
+        </div>
+    </div>
+
+</body>
+</html>
