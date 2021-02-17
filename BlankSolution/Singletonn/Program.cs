@@ -6,8 +6,8 @@ namespace Singleton
     {
         static void Main(string[] args)
         {          
-            var singleton1 = FileWorkerSingleton.Instance;
-            var singleton2 = FileWorkerSingleton.Instance;
+            var singleton1 = LoggerSingleton.Instance;
+            var singleton2 = LoggerSingleton.Instance;
 
             singleton1.WriteText("singleton 1");
             singleton2.WriteText("singleton 2");

@@ -5,18 +5,18 @@ using System.Text;
 
 namespace Singleton
 {
-    public class FileWorkerSingleton
+    public class LoggerSingleton
     {
-        private static readonly Lazy<FileWorkerSingleton> instance =
-            new Lazy<FileWorkerSingleton>(() => new FileWorkerSingleton());
+        private static readonly Lazy<LoggerSingleton> instance =
+            new Lazy<LoggerSingleton>(() => new LoggerSingleton());
 
-        public static FileWorkerSingleton Instance { get { return instance.Value; } }
+        public static LoggerSingleton Instance { get { return instance.Value; } }
         public string FilePath { get; }
         public string Text { get; set; }
 
-        private FileWorkerSingleton()
+        private LoggerSingleton()
         {
-            FilePath = "test2.txt";
+            FilePath = "test.txt";
             ReadTextFromFile();
         }
 
