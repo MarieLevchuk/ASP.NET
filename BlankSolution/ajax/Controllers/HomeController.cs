@@ -1,4 +1,5 @@
 ﻿using ajax.Database;
+using ajax.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,28 @@ namespace ajax.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        List<Shop> shops;
+        public HomeController()
         {
-
-            return View();
+            shops = ShopsDB.Shops;
         }
 
-        [HttpGet]
-        public ActionResult Shop(int id)
+        public ActionResult Index()
         {
-            var allShops = ShopsDB.Shops;
-            if (id != 0 && allShops.Count>0)
+            shops = ShopsDB.Shops;
+            Tuple<List<Shop>, Shop> tuple = new Tuple<List<Shop>, Shop>(shops, shops[0]);            
+            return View("ShopsData", tuple);
+        }
+        
+        [HttpPost]
+        public PartialViewResult ShopsData(string id)
+        {
+            if (!string.IsNullOrEmpty(id))
             {
-                return PartialView(allShops);
+                Shop selshop = shops.Where(x => x.Id.ToString() == id).FirstOrDefault();
+                return PartialView("_shopDescription", selshop);
             }
-            return HttpNotFound();
+            return PartialView("ShopsData");
         }
     }
 }

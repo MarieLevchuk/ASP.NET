@@ -1,0 +1,52 @@
+﻿@using ajax.Models
+@model  Tuple<List<Shop>, Shop>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    AjaxOptions ajaxOptions = new AjaxOptions
+    {
+        HttpMethod = "POST",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "shopDescription"
+    };
+}
+@Styles.Render("~/Content/css")
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<div style="margin: 0 40px">
+    <h2>Shops info</h2><br />
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Shop</th>
+                <th scope="col">Work Time</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var shop in Model.Item1)
+            {
+                <tr>
+                    <td>@shop.Name</td>
+                    <td>@shop.WorkTime</td>
+                    <td class="description">
+                        @Ajax.ActionLink("description", "ShopsData", new { id = shop.Id },
+                       new AjaxOptions
+                       {
+                           HttpMethod = "POST",
+                           InsertionMode = InsertionMode.Replace,
+                           UpdateTargetId = "shopDescription"
+                       })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table><br />
+
+    <div id="shopDescription" class="p_info" style="background-color: lightgrey">
+        <h3>@Model.Item2.Name</h3> <br />
+        @Model.Item2.Description
+    </div>
+</div>
+
+
